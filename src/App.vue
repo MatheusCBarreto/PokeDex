@@ -1,7 +1,10 @@
 <template>
-  <div id="App">
-    <div v-for="(poke, index) in pokemons" :key="index">
+  <div id="app">
+    <h1 class=" column is-half is-offset-one-quarter is-size-2">PokeDex</h1>
+    <div class="column is-half is-offset-one-quarter">
+      <div v-for="(poke, index) in pokemons" :key="index">
       <Pokemons :name="poke.name" :url="poke.url" :num="index + 1"/>
+    </div>
     </div>
   </div>
 </template>
@@ -11,7 +14,7 @@ import axios from "axios";
 import Pokemons from "./components/Pokemons"
 
 export default {
-  name: 'App',
+  name: 'app',
   data() {
     return {
       pokemons: []
@@ -30,12 +33,5 @@ export default {
 </script>
 
 <style>
-#App {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
